@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+A tools to detect and generate QRCode. Using CIDetector to detector QRCode, Using CIFilter to generate QRCode.
                        DESC
 
   s.homepage         = 'https://github.com/Secrimart/MTQRCode'
