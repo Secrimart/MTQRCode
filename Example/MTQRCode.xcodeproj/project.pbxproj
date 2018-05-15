@@ -57,13 +57,13 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		684AF156C5EF40BB53370D6F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		684AF156C5EF40BB53370D6F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75F8504D957DEF11EE4A7839 /* Pods_MTQRCode_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MTQRCode_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B05F6CF9427B2202FAAA12A /* Pods-MTQRCode_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTQRCode_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MTQRCode_Tests/Pods-MTQRCode_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8EC65D760940DBEC11F3E28C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		B32D2290BECED81F32697815 /* MTQRCode.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = MTQRCode.podspec; path = ../MTQRCode.podspec; sourceTree = "<group>"; };
+		8EC65D760940DBEC11F3E28C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		B32D2290BECED81F32697815 /* MTQRCode.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MTQRCode.podspec; path = ../MTQRCode.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BD512F3BAC82BCFDA2525871 /* Pods-MTQRCode_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTQRCode_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MTQRCode_Tests/Pods-MTQRCode_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F6AC9D11F9CC6E6D0888F136 /* Pods-MTQRCode_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTQRCode_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MTQRCode_Example/Pods-MTQRCode_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		FF04CACAFAC9D9C20C2B3732 /* Pods_MTQRCode_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MTQRCode_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,7 +207,7 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				8220AD4F8F15AF0EDAABDFF0 /* [CP] Embed Pods Frameworks */,
+				4D36A3A78ED4698634DAA4E1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -294,6 +294,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4D36A3A78ED4698634DAA4E1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MTQRCode_Example/Pods-MTQRCode_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MTQRCode/MTQRCode.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MTQRCode.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MTQRCode_Example/Pods-MTQRCode_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6CCBA81F09F8319C05DDB488 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -310,24 +330,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8220AD4F8F15AF0EDAABDFF0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MTQRCode_Example/Pods-MTQRCode_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/MTQRCode/MTQRCode.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MTQRCode.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MTQRCode_Example/Pods-MTQRCode_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A1AD38D02957FC23D578907C /* [CP] Check Pods Manifest.lock */ = {

@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'MTQRCode'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of MTQRCode.'
+  s.summary          = 'Simple QRCode detector and generator.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -21,22 +21,23 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/rstx_reg@aliyun.com/MTQRCode'
+  s.homepage         = 'https://github.com/Secrimart/MTQRCode'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'rstx_reg@aliyun.com' => 'secrimart@aliyun.com' }
-  s.source           = { :git => 'https://github.com/rstx_reg@aliyun.com/MTQRCode.git', :tag => s.version.to_s }
+  s.author           = { 'Secrimart' => 'secrimart@aliyun.com' }
+  s.source           = { :git => 'https://github.com/Secrimart/MTQRCode.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
-
-  s.source_files = 'MTQRCode/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'MTQRCode' => ['MTQRCode/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.subspec 'QRCapture' do |capture|
+      capture.source_files = 'MTQRCode/Classes/QRCapture/*.*'
+      capture.public_header_files = 'MTQRCode/Classes/QRCapture/*.h'
+  end
+  
+  s.subspec 'QRGenerator' do |generator|
+      generator.source_files = 'MTQRCode/Classes/QRGenerator/*.*'
+      generator.public_header_files = 'MTQRCode/Classes/QRGenerator/*.h'
+  end
+  
 end
