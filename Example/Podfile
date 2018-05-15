@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MTQRCode_Example' do
+  pod 'MTQRCode', :path => '../'
+
+  target 'MTQRCode_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
